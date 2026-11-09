@@ -1,0 +1,277 @@
+{
+  "customers": {
+    "shape": [
+      1200,
+      5
+    ],
+    "dtypes": {
+      "customer_id": "object",
+      "city": "object",
+      "signup_date": "object",
+      "age": "object",
+      "gender": "object"
+    },
+    "missing": {
+      "customer_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "city": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "signup_date": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "age": {
+        "count": 61,
+        "pct": 5.08
+      },
+      "gender": {
+        "count": 30,
+        "pct": 2.5
+      }
+    }
+  },
+  "products": {
+    "shape": [
+      40,
+      4
+    ],
+    "dtypes": {
+      "product_id": "object",
+      "product_name": "object",
+      "category": "object",
+      "price_inr": "int64"
+    },
+    "missing": {
+      "product_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "product_name": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "category": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "price_inr": {
+        "count": 0,
+        "pct": 0.0
+      }
+    }
+  },
+  "orders": {
+    "shape": [
+      13084,
+      9
+    ],
+    "dtypes": {
+      "order_id": "object",
+      "customer_id": "object",
+      "product_id": "object",
+      "quantity": "int64",
+      "order_ts": "object",
+      "status": "object",
+      "discount_pct": "int64",
+      "order_amount": "object",
+      "delivery_minutes": "object"
+    },
+    "missing": {
+      "order_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "customer_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "product_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "quantity": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "order_ts": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "status": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "discount_pct": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "order_amount": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "delivery_minutes": {
+        "count": 2541,
+        "pct": 19.42
+      }
+    }
+  },
+  "tickets": {
+    "shape": [
+      164,
+      5
+    ],
+    "dtypes": {
+      "ticket_id": "object",
+      "customer_id": "object",
+      "order_id": "object",
+      "text": "object",
+      "true_category": "object"
+    },
+    "missing": {
+      "ticket_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "customer_id": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "order_id": {
+        "count": 8,
+        "pct": 4.88
+      },
+      "text": {
+        "count": 4,
+        "pct": 2.44
+      },
+      "true_category": {
+        "count": 0,
+        "pct": 0.0
+      }
+    }
+  },
+  "reference_counts": {
+    "raw_orders": 13084,
+    "exact_duplicate_rows": 119,
+    "pending_rows": 656,
+    "distinct_order_id": 12309,
+    "non_numeric_amounts": 120,
+    "negative_delivery_minutes": 106,
+    "blank_delivery_minutes": 2541,
+    "blank_age": 61,
+    "ages_outside_10_100": 6,
+    "raw_city_spellings": 24,
+    "raw_gender_spellings_nonblank": 10,
+    "blank_gender": 30
+  },
+  "clean_counts": {
+    "customers": 1200,
+    "cities": {
+      "Pune": 227,
+      "Delhi": 210,
+      "Bengaluru": 197,
+      "Chennai": 191,
+      "Hyderabad": 191,
+      "Mumbai": 184
+    },
+    "genders": {
+      "female": 610,
+      "male": 560,
+      "unknown": 30
+    },
+    "missing_ages": 0,
+    "orders": 12309,
+    "statuses": {
+      "completed": 11110,
+      "cancelled": 1199
+    },
+    "completed_missing_delivery": 0,
+    "cancelled_missing_delivery": 1199,
+    "completed_revenue_inr": 2998668.8
+  },
+  "sql_counts": {
+    "Q1": 30,
+    "Q2": 30,
+    "Q3": 11,
+    "Q4": 25,
+    "Q5": 550,
+    "Q6": 1175,
+    "Q7": 183
+  },
+  "pandas": {
+    "pivot_grand_total": 2998668.8,
+    "by_city": {
+      "Bengaluru": {
+        "sum": 523643.4,
+        "mean": 276.47,
+        "count": 1894
+      },
+      "Chennai": {
+        "sum": 463629.15,
+        "mean": 272.72,
+        "count": 1700
+      },
+      "Delhi": {
+        "sum": 502829.8,
+        "mean": 243.62,
+        "count": 2064
+      },
+      "Hyderabad": {
+        "sum": 528589.9,
+        "mean": 284.95,
+        "count": 1855
+      },
+      "Mumbai": {
+        "sum": 479058.5,
+        "mean": 297.0,
+        "count": 1613
+      },
+      "Pune": {
+        "sum": 500918.05,
+        "mean": 252.48,
+        "count": 1984
+      }
+    },
+    "amount_stats": {
+      "mean": 269.91,
+      "median": 135.0,
+      "skew": 4.61,
+      "q1": 64.8,
+      "q3": 297.0,
+      "lower_fence": -283.5,
+      "upper_fence": 645.3,
+      "below": 0,
+      "above": 897
+    },
+    "correlations": {
+      "order_amount": {
+        "order_amount": 1.0,
+        "discount_pct": -0.095,
+        "quantity": 0.087,
+        "delivery_minutes": -0.003
+      },
+      "discount_pct": {
+        "order_amount": -0.095,
+        "discount_pct": 1.0,
+        "quantity": -0.0,
+        "delivery_minutes": -0.01
+      },
+      "quantity": {
+        "order_amount": 0.087,
+        "discount_pct": -0.0,
+        "quantity": 1.0,
+        "delivery_minutes": -0.013
+      },
+      "delivery_minutes": {
+        "order_amount": -0.003,
+        "discount_pct": -0.01,
+        "quantity": -0.013,
+        "delivery_minutes": 1.0
+      }
+    }
+  }
+}

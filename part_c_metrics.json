@@ -1,0 +1,300 @@
+{
+  "zero_shot": {
+    "classified": 147,
+    "accuracy": 85.71,
+    "tokens": 10492,
+    "tokens_per_classified": 71.37,
+    "status_counts": {
+      "classified_json": 135,
+      "classified_keyword": 12,
+      "flagged_invalid_output": 9,
+      "flagged_long": 4,
+      "skipped_empty": 4
+    },
+    "retry_count": 19,
+    "redaction": {
+      "emails": 55,
+      "phones": 91,
+      "order_ids": 132
+    }
+  },
+  "few_shot": {
+    "classified": 147,
+    "accuracy": 100.0,
+    "tokens": 15640,
+    "tokens_per_classified": 106.39,
+    "status_counts": {
+      "classified_json": 135,
+      "classified_keyword": 12,
+      "flagged_invalid_output": 9,
+      "flagged_long": 4,
+      "skipped_empty": 4
+    },
+    "retry_count": 19,
+    "redaction": {
+      "emails": 55,
+      "phones": 91,
+      "order_ids": 132
+    }
+  },
+  "zero_shot_confusion_labels": [
+    "billing",
+    "delivery",
+    "technical",
+    "fraud"
+  ],
+  "zero_shot_confusion_matrix": [
+    [
+      38,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      36,
+      0,
+      0
+    ],
+    [
+      10,
+      0,
+      29,
+      0
+    ],
+    [
+      11,
+      0,
+      0,
+      23
+    ]
+  ],
+  "budget_demo": {
+    "budget": 5000,
+    "status_counts": {
+      "budget_exhausted": 81,
+      "classified_json": 66,
+      "classified_keyword": 5,
+      "skipped_empty": 4,
+      "flagged_long": 4,
+      "flagged_invalid_output": 4
+    },
+    "budget_exhausted": 81,
+    "tokens": 5057
+  },
+  "final_few_shot": {
+    "classified": 147,
+    "accuracy": 100.0,
+    "tokens": 15640,
+    "tokens_per_classified": 106.39,
+    "status_counts": {
+      "classified_json": 135,
+      "classified_keyword": 12,
+      "flagged_invalid_output": 9,
+      "flagged_long": 4,
+      "skipped_empty": 4
+    },
+    "retry_count": 19,
+    "redaction": {
+      "emails": 55,
+      "phones": 91,
+      "order_ids": 132
+    }
+  },
+  "final_rows": 164,
+  "retry_log_zero_shot": [
+    {
+      "ticket_id": "T0002",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0116",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0153",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0039",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0152",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0043",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0111",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0155",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0100",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0068",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0135",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0009",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0067",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0106",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0097",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0003",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0019",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0086",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0065",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    }
+  ],
+  "retry_log_few_shot": [
+    {
+      "ticket_id": "T0002",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0116",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0153",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0039",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0152",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0043",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0111",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0155",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0100",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0068",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0135",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0009",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0067",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0106",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0097",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0003",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0019",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0086",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    },
+    {
+      "ticket_id": "T0065",
+      "retry_number": 0,
+      "wait_seconds": 0.05299
+    }
+  ],
+  "remaining_pii_matches_after_redaction": 0
+}

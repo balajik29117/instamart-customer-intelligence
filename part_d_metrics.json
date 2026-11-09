@@ -1,0 +1,143 @@
+{
+  "chunk_count": 15,
+  "chunk_counts": {
+    "refund_policy.txt": 4,
+    "delivery_policy.txt": 3,
+    "payment_policy.txt": 3,
+    "privacy_policy.txt": 2,
+    "escalation_policy.txt": 3
+  },
+  "rag_overlap_10": {
+    "expected_doc_top3": 12,
+    "expected_fact_present": 12,
+    "unanswerable_fallback": 2,
+    "failed_questions": []
+  },
+  "rag_overlap_0": {
+    "expected_doc_top3": 12,
+    "expected_fact_present": 10,
+    "unanswerable_fallback": 2,
+    "failed_questions": [
+      "What delivery time makes a completed order eligible for a full refund?",
+      "How soon is money returned when a payment fails but is deducted?"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S1",
+      "status": "REFUND",
+      "final_answer": "REFUND: INR 128.25 issued.",
+      "expected_refund_inr": 128.25,
+      "llm_calls": 5,
+      "tokens_used": 2162,
+      "tools": [
+        "get_order",
+        "search_policy",
+        "calculate_refund",
+        "issue_refund"
+      ]
+    },
+    {
+      "scenario_id": "S2",
+      "status": "REFUND",
+      "final_answer": "REFUND: INR 135.0 issued.",
+      "expected_refund_inr": 135.0,
+      "llm_calls": 5,
+      "tokens_used": 2162,
+      "tools": [
+        "get_order",
+        "search_policy",
+        "calculate_refund",
+        "issue_refund"
+      ]
+    },
+    {
+      "scenario_id": "S3",
+      "status": "ESCALATE",
+      "final_answer": "ESCALATE: refund above INR 1000 sent to a human lead.",
+      "expected_refund_inr": 1999.0,
+      "llm_calls": 5,
+      "tokens_used": 2149,
+      "tools": [
+        "get_order",
+        "search_policy",
+        "calculate_refund",
+        "escalate_to_human"
+      ]
+    },
+    {
+      "scenario_id": "S4",
+      "status": "DENIED",
+      "final_answer": "DENIED: delivery was within 45 minutes.",
+      "expected_refund_inr": 0.0,
+      "llm_calls": 4,
+      "tokens_used": 1617,
+      "tools": [
+        "get_order",
+        "search_policy",
+        "calculate_refund"
+      ]
+    },
+    {
+      "scenario_id": "S5",
+      "status": "DENIED",
+      "final_answer": "DENIED: only completed orders can be refunded.",
+      "expected_refund_inr": 0.0,
+      "llm_calls": 3,
+      "tokens_used": 1096,
+      "tools": [
+        "get_order",
+        "search_policy"
+      ]
+    },
+    {
+      "scenario_id": "S6",
+      "status": "NOT_FOUND",
+      "final_answer": "NOT_FOUND: no such order.",
+      "expected_refund_inr": 0.0,
+      "llm_calls": 2,
+      "tokens_used": 578,
+      "tools": [
+        "get_order"
+      ]
+    },
+    {
+      "scenario_id": "S7",
+      "status": "FALLBACK_MAX_ITERATIONS",
+      "final_answer": "FALLBACK_MAX_ITERATIONS: hand off to a human agent; maximum tool/model iterations reached.",
+      "expected_refund_inr": 0.0,
+      "llm_calls": 6,
+      "tokens_used": 4518,
+      "tools": [
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "search_policy"
+      ]
+    }
+  ],
+  "token_limit_demo": {
+    "status": "FALLBACK_TOKEN_LIMIT",
+    "llm_calls": 1,
+    "tokens_used": 292
+  },
+  "timeout_demo": {
+    "status": "FALLBACK_TIMEOUT",
+    "llm_calls": 0
+  },
+  "crash_resume": {
+    "status": "REFUND",
+    "final_answer": "REFUND: INR 128.25 issued.",
+    "tools_executed": [
+      "get_order",
+      "search_policy",
+      "calculate_refund",
+      "issue_refund"
+    ],
+    "llm_calls": 5,
+    "tokens_used": 2162
+  },
+  "react_vs_plan": "ReAct makes one model decision per observation, so the measured S1/S5/S6 calls are 5/3/2 and each decision can adapt to NOT_FOUND or a cancelled order. A plan-and-execute design could reduce normal model calls by requesting the whole sequence once, but it must replan when a tool returns an unexpected result and risks executing a stale plan. For this refund workflow I prefer ReAct because correctness and safe stopping matter more than saving a few local mock calls; every refund decision is checked against the database and policy before money is issued."
+}
